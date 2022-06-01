@@ -1,11 +1,11 @@
 {
   "name": "nodejs-com-express",
   "version": "1.0.0",
-  "type": "module",
   "description": "",
   "main": "index.js",
+  "Type": "module",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "jest ./test",
     "cli": "node cli.js ./arquivos/texto1.md"
   },
   "keywords": [],
@@ -13,6 +13,7 @@
   "license": "ISC",
   "dependencies": {
     "chalk": "^5.0.1",
+    "jest": "^28.1.0",
     "node-fetch": "^3.2.4"
   }
 }

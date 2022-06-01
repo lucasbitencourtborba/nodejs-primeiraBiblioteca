@@ -15,7 +15,7 @@ function extraiLinks(texto){
 }
 
 
-function trataErro(erro) {
+export function trataErro(erro) {
     throw new Error(chalk.red(erro));
 }
 
