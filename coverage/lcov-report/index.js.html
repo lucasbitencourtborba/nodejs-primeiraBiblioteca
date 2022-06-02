@@ -23,30 +23,30 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>0/12</span>
+                <span class='fraction'>12/12</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">50% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>0/2</span>
+                <span class='fraction'>1/2</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>0/3</span>
+                <span class='fraction'>3/3</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>0/12</span>
+                <span class='fraction'>12/12</span>
             </div>
         
             
@@ -61,7 +61,7 @@
             </div>
         </template>
     </div>
-    <div class='status-line low'></div>
+    <div class='status-line high'></div>
     <pre><table class="coverage">
 <tr><td class="line-count quiet"><a name='L1'></a><a href='#L1'>1</a>
 <a name='L2'></a><a href='#L2'>2</a>
@@ -105,31 +105,31 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -142,32 +142,32 @@
 <span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import fs, { link } from 'fs'
 &nbsp;
 &nbsp;
-function <span class="fstat-no" title="function not covered" >extraiLinks(</span>texto){
-    const regex = <span class="cstat-no" title="statement not covered" >/\[([^\]]*)\]\((https?:\/\/[^$#\s].[^\s]*)\)/gm;</span>
-    const arrayResultados = <span class="cstat-no" title="statement not covered" >[]</span>
+function extraiLinks(texto){
+    const regex = /\[([^\]]*)\]\((https?:\/\/[^$#\s].[^\s]*)\)/gm;
+    const arrayResultados = []
     let temp;
     
-<span class="cstat-no" title="statement not covered" >    while((temp = regex.exec(texto)) !== null){</span>
-<span class="cstat-no" title="statement not covered" >        arrayResultados.push({[temp[1]]: temp[2]})</span>
+    while((temp = regex.exec(texto)) !== null){
+        arrayResultados.push({[temp[1]]: temp[2]})
     }
 &nbsp;
-<span class="cstat-no" title="statement not covered" >    return arrayResultados.length === 0 ? 'Não há links' : arrayResultados;</span>
+    return arrayResultados.length === 0 ? <span class="branch-0 cbranch-no" title="branch not covered" >'Não há links' </span>: arrayResultados;
 }
 &nbsp;
 &nbsp;
-export function <span class="fstat-no" title="function not covered" >trataErro(</span>erro) {
-<span class="cstat-no" title="statement not covered" >    throw new Error(erro);</span>
+export function trataErro(erro) {
+    throw new Error(erro.code, 'não há arquivo no caminho');
 }
 &nbsp;
 &nbsp;
-export async function <span class="fstat-no" title="function not covered" >leArquivo(</span>caminhoArquivo) {  // Função síncrona com async e await
-    const encoding = <span class="cstat-no" title="statement not covered" >'utf-8'</span>
-<span class="cstat-no" title="statement not covered" >    try {</span>
-        const texto = <span class="cstat-no" title="statement not covered" >await fs.promises.readFile(caminhoArquivo, encoding)</span>
-        const links = <span class="cstat-no" title="statement not covered" >extraiLinks(texto)</span>
-<span class="cstat-no" title="statement not covered" >        return links</span>
+export async function leArquivo(caminhoArquivo) {  // Função síncrona com async e await
+    const encoding = 'utf-8'
+    try {
+        const texto = await fs.promises.readFile(caminhoArquivo, encoding)
+        const links = extraiLinks(texto)
+        return links
     } catch(error) {
-<span class="cstat-no" title="statement not covered" >        trataErro(error)</span>
+        trataErro(error)
     }
 }
 &nbsp;
@@ -184,7 +184,7 @@ export async function <span class="fstat-no" title="function not covered" >leArq
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at Thu Jun 02 2022 09:13:59 GMT-0300 (Horário Padrão de Brasília)
+                at Thu Jun 02 2022 09:51:50 GMT-0300 (Horário Padrão de Brasília)
             </div>
         <script src="prettify.js"></script>
         <script>

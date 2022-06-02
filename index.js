@@ -15,7 +15,7 @@ function extraiLinks(texto){
 
 
 export function trataErro(erro) {
-    throw new Error(erro);
+    throw new Error(erro.code, 'não há arquivo no caminho');
 }
 
 

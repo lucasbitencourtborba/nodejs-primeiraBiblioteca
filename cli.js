@@ -1,3 +1,4 @@
+#!/usr/bin/env node
 import { leArquivo } from './index.js'
 import { validaURLs } from './httpValidacao.js'
 
