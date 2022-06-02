@@ -1,4 +1,3 @@
-import chalk from 'chalk'
 import fs, { link } from 'fs'
 
 
@@ -16,7 +15,7 @@ function extraiLinks(texto){
 
 
 export function trataErro(erro) {
-    throw new Error(chalk.red(erro));
+    throw new Error(erro);
 }
 
 
@@ -27,7 +26,7 @@ export async function leArquivo(caminhoArquivo) {  // Função síncrona com asy
         const links = extraiLinks(texto)
         return links
     } catch(error) {
-        trataErro(chalk.red(error))
+        trataErro(error)
     }
 }
 
